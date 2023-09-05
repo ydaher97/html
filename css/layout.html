@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: chocolate;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 5px;
+        }
+        .main-content {
+            overflow: hidden;
+            
+
+        }
+        aside {
+            background-color: green;
+            float: left;
+            width: 24%; 
+            padding: 20px;
+            box-sizing: border-box;
+            height: 400px;
+        }
+        main {
+            background-color: blueviolet;
+            float: right;
+            width: 75%  ;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 400px;
+
+        }
+        main p {
+            float: right;
+        }
+        footer {
+            background-color: blue;
+            clear: both;
+            text-align: center;
+            padding: 20px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>header</header>
+        <div class="main-content">
+            <aside>aside</aside>
+            <main><p>main</p></main>
+        </div>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>
