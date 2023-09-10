@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            /* justify-content:space-between; remove comment for 11.1 ass && comment justify-content and align-items */
+            justify-content: center;/*comment (11.2)*/
+            align-items: center;/*comment (11.2*/
+            width: 100%;
+            background-color: antiquewhite;
+            height: 100vh;
+        }
+       /* .container{
+            /*for 11.3
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        */
+         /* .container{
+            /*for 11.4
+            justify-content: space-around;
+            flex-direction: column;
+
+        }
+        */
+        .container div{
+            width: 20%;
+            height: 210px;
+        }
+
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .red{
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="green"></div>
+        <div class="blue"></div>
+        <div class="red"></div>
+    </div>
+</body>
+</html>

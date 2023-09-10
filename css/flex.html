@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.column {
+    width: 25%; /* Each column takes up 25% of the container width */
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+@media screen and (max-width: 768px) {
+    .column {
+        width: 100%; 
+        float: none; 
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="column">
+        <p>Column 1</p>
+        <p>This is some text for the first column.</p>
+    </div>
+    <div class="column">
+        <p>Column 2</p>
+        <p>This is some text for the second column.</p>
+    </div>
+    <div class="column">
+        <p>Column 3</p>
+        <p>This is some text for the third column.</p>
+    </div>
+    <div class="column">
+        <p>Column 4</p>
+        <p>This is some text for the fourth column.</p>
+    </div>
+</body>
+</html>

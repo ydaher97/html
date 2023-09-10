@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(230, 230, 230);
+        }
+        ul{
+            display: flex;
+            align-items: center;
+        }
+        ul li{
+            list-style: none;
+            padding: 0;
+        }
+        ul li:hover{
+            background-color: rgb(190, 190, 190);
+        }
+        a{
+            text-decoration: none;
+            padding: 10px 20px;
+            color: black;
+            font-weight: 200;
+        }
+        .logo{
+            padding-left: 10px;
+            font-weight: 400;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav{
+                flex-direction: column;
+            }
+            ul{
+                flex-direction: column;
+                align-items: center;
+                padding:0;
+            }
+            ul li{
+            padding-bottom: 12px;
+          }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">APPLESEEDS</div>
+        <ul>
+            <li><a href="">home</a></li>
+            <li><a href="">about</a></li>
+            <li><a href="">portfilio</a></li>
+            <li><a href="">contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
