@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link with Href Value Display</title>
+    <style>
+       
+        .link-with-href {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        .link-with-href::after {
+            content: " (Link: " attr(href) ")";
+            font-size: 80%;
+            color: #888;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="https://www.youtube.com" class="link-with-href">Visit youtube.com</a>
+</body>
+</html>
