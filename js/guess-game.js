@@ -1,7 +1,7 @@
 const targetNumber = Math.floor(Math.random() * 51); 
 let guessed = false;
 
-while (!guessed) {
+ while (!guessed) {
   const userGuess = parseInt(prompt('Enter your guess (between 0 50)'), 10);
 
   if (isNaN(userGuess)) {
