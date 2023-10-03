@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+
+</head>
+<body>
+        <ul>
+            <li>title 1</li>
+            <li class="start-here">title 2</li>
+            <li>
+        <ul>
+            <li>sub title 1</li>
+            <li>sub title 2</li>
+            <li>sub title 3</li>
+        </ul>
+        </li>
+            <li>title 3</li>
+        </ul>
+        <div>
+            <p>Hello World!</p>
+        </div>
+
+        <script >
+            
+              const startHereElement = document.querySelector('.start-here');
+              if (startHereElement) {
+                startHereElement.innerText = 'Main title';
+              }
+            
+             const ulElement = document.querySelectorAll('ul');
+             
+                const newSubTitle = document.createElement('li');
+                newSubTitle.innerText = 'Sub 4';
+                ulElement[1].appendChild(newSubTitle);
+              
+            
+            const ulElemen = document.querySelector('ul');
+
+            const liElements = ulElemen.querySelectorAll('li');
+
+            liElements.forEach(li => {
+            if (li.textContent.trim() === 'title 3') {
+                ulElemen.removeChild(li);
+                console.log('test')
+            }
+            });
+                
+             
+            
+            document.title = "Master Of The Dom";
+            
+              const pElement = document.querySelector('div p');
+              if (pElement) {
+                pElement.innerText = 'New content for the paragraph.';
+              }
+            
+            </script>
+</body>
+</html>

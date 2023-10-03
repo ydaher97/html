@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Header</h1>
+    <p>Paragraph</p>
+    <a href="#">link</a>
+    <img src="" alt="" />
+    <div class="x">Div with a class</div>
+    <div id="y">Div with an id</div>
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    </body>
+    <script >
+
+        // const divY = document.getElementById('y')
+        // const divX = document.getElementsByClassName('x');
+        // const images = document.images;
+
+            const allElements = document.body.children;
+
+            console.log('All elements');
+            for (let i = 0; i < allElements.length; i++) {
+            console.log(allElements[i]);
+            }
+
+            const allElementsQuerySelector = document.querySelectorAll('body *');
+
+            console.log(' querySelector');
+            allElementsQuerySelector.forEach(element => {
+            console.log(element);
+            });
+
+            const allInputs = document.querySelectorAll('input');
+
+            console.log('All input elements');
+            allInputs.forEach(input => {
+            console.log(input);
+            });
+    </script>
+</body>
+</html>

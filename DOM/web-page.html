@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const hobbies = [
+            'swimming','painting' , 'skydiving'
+        ];
+
+
+
+        const heading = document.createElement('h1');
+    heading.textContent = 'Welcome to My Web Page';
+    document.body.appendChild(heading);
+
+    const paragraph = document.createElement('p');
+    paragraph.textContent = 'my name is yazeed';
+    document.body.appendChild(paragraph);
+
+
+
+    const h3 = document.createElement('h3');
+    h3.textContent = 'my hobbies';
+    document.body.appendChild(h3);
+
+    const ol = document.createElement('ol');
+
+    hobbies.forEach(hobbie => {
+        const li = document.createElement('li')
+        li.textContent = `${hobbie}`;
+        ol.appendChild(li);
+
+    })
+    document.body.appendChild(ol);
+
+
+
+    const button = document.createElement('button');
+    button.textContent = 'contact me';
+    button.addEventListener('click', () => {
+      alert('send');
+    });
+    document.body.appendChild(button);
+    </script>
+</body>
+</html>
