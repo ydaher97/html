@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ver Code</title>
+    <style>
+        .ver-input {
+            width: 2em;
+            text-align: center;
+            margin: 0 0.2em;
+        }
+        .container{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    <div id="correct">839483</div>
+
+    <form id="verForm">
+        <input class="ver-input" maxlength="1" />
+        <input class="ver-input" maxlength="1" />
+        <input class="ver-input" maxlength="1" />
+        <input class="ver-input" maxlength="1" />
+        <input class="ver-input" maxlength="1" />
+        <input class="ver-input" maxlength="1" />
+    </form>
+
+    <p class="result"></p>
+</div>
+    <script>
+        const verInputs = document.querySelectorAll('.ver-input');
+        const verForm = document.getElementById('verForm');
+        const resultP = document.querySelector('.result');
+        const correct = document.querySelector('#correct');
+
+
+        verInputs.forEach((input, index) => {
+            input.addEventListener('input', (event) => {
+                const value = event.target.value;
+                //console.log(value)
+                if (value.length === 1) {
+                    if (index < verInputs.length - 1) {
+                        verInputs[index + 1].focus();
+                    } else {
+                        event.preventDefault(); 
+
+                        verForm.submit();
+                        // if (correct.innerText === verForm.value) {
+                        // resultP.innerText = 'Correct';
+                        // } else {
+                        //     resultP.innerText = 'Wrong';
+                        // }
+                    }
+                }
+            });
+        });
+
+
+        verForm.addEventListener('submit', (event) => {
+            event.preventDefault(); 
+            const enteredCode = event.target.value;
+            console.log(enteredCode)
+
+            if (correct.innerText === enteredCode) {
+                resultP.innerText = 'Correct';
+            } else {
+                resultP.innerText = 'Wrong';
+            }
+        });
+
+
+        verForm.addEventListener('paste', (event) => {
+            const pasteData = event.clipboardData.getData('text');
+            for (let i = 0; i < Math.min(pasteData.length, verInputs.length); i++) {
+                verInputs[i].value = pasteData[i];
+            }
+            verForm.submit();
+            //(event.clipboardData || window.clipboardData)
+        });
+    </script>
+</body>
+</html>

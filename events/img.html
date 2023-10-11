@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+        .on {
+            display: block;        
+            }
+
+        .off {
+            display: none;
+        }
+
+     
+    </style>
+</head>
+<body>
+    <div class="container" onclick="toggleLightbulb()">
+        <img id="lightOn" class="on" src="../images/fea4e957-6d9f-47b2-97a6-5724d52dffe8.jpg" alt="on">
+        <img id="lightOff" class="off" src="../images/ffb10164-0a09-4f03-a0a0-61313f61b3e1.jpg" alt="off">
+    </div>
+    <script>
+        function toggleLightbulb() {
+            const lightbulbOn = document.getElementById('lightOn');
+            const lightbulbOff = document.getElementById('lightOff');
+
+            
+
+            let isOn = window.getComputedStyle(lightbulbOn).display;
+
+            if(isOn == 'block'){
+                lightbulbOff.style.display = 'block';
+                lightbulbOn.style.display = 'none'
+            }else{
+                lightbulbOff.style.display = 'none';
+                lightbulbOn.style.display = 'block'
+            }
+            
+
+        }
+    </script>
+</body>
+</html>

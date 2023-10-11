@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h3>how many emojies you want to show</h3>
+        <input id="numInput" type="number" placeholder="Enter a number">
+        <button id="btn" onclick="submit()">try it</button>
+        <br>
+    </div>
+
+    <div id="smileysContainer"></div>
+
+    <script>
+        function submit(){
+            const numberInput = parseInt(document.getElementById('numInput').value) ;
+            const smileysContainer = document.getElementById('smileysContainer');
+
+            if (isNaN(numberInput) || numberInput < 0) {
+                alert('Please enter a valid non-negative number.');
+                return;
+            }
+            clearSmileys();
+          
+            for (let i = 0; i < numberInput; i++) {
+                const smiley = document.createElement('img');
+                smiley.src = '../images/smile.jpg';  
+                smiley.classList.add('smiley');
+                smileysContainer.appendChild(smiley);
+            }
+
+            
+        }
+
+        function clearSmileys() {
+            const smileysContainer = document.getElementById('smileysContainer');
+            smileysContainer.innerHTML = '';
+            }
+    </script>
+</body>
+</html>

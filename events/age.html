@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            text-align: center;
+            }
+
+           
+      
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <label for="ageInput">Enter your age:</label>
+        <input type="number" id="ageInput" placeholder="Enter your age">
+        <!-- <button onclick="checkAge()">Check</button> -->
+        <p id="result"></p>
+    </div>
+
+
+    <script>
+
+            const ageInput = document.getElementById('ageInput');
+        const resultElement = document.getElementById('result');
+
+       ageInput.addEventListener('input', function () {
+            const age = parseInt(ageInput.value);
+
+            if (isNaN(age)) {
+                resultElement.innerText = '';
+            } else if (age >= 18) {
+                resultElement.innerText = 'You can drink.';
+            } else {
+                resultElement.innerText = 'You are too young.';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="increase" onclick="increaseText()"> increase</button>
+        <button id="decrease" onclick="decreaseText()">decrease</button>
+        <p id="result">some text</p>
+    </div>
+
+    <script>
+
+        const resultElement = document.getElementById('result');
+
+        function increaseText(){
+            let currentSize = parseInt(window.getComputedStyle(resultElement).fontSize);
+            if (currentSize < 100) {
+                currentSize += 2;
+                console.log(currentSize)
+                resultElement.style.fontSize = `${currentSize}px`;
+            }
+        }
+
+        function decreaseText(){
+            let currentSize = parseInt(window.getComputedStyle(resultElement).fontSize);
+            if (currentSize > 6) {
+                currentSize -= 2;
+                console.log(currentSize)
+                resultElement.style.fontSize = `${currentSize}px`;
+            }
+        }
+
+    </script>
+</body>
+</html>

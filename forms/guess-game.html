@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rematch{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>welcome to my guess letter</h1>
+        <p class="guess"></p>
+        <div class="rematch">
+            <h3>would you want to paly again</h3>
+            <button onclick="rematch()">again</button>
+        </div>
+
+        <p>key pressed</p>
+        <p class="keys"></p>
+    </div>
+
+    <script>
+
+        const randomLetter = generateRandomLetter();
+        let keyPressed = document.querySelector('.keys')
+        let isDone = document.querySelector('.rematch')
+
+
+        document.addEventListener('keyup', (event) => {
+            let name = event.key;
+          
+            keyPressed.innerText += `,${name}`
+            if(name === randomLetter){
+                isDone.style.display = 'block'
+                
+            }
+           
+            }, false);
+
+       function generateRandomLetter() {
+            const letters = 'abcdefghijklmnopqrstuvwxyz';
+            const random = Math.floor(Math.random() * letters.length);
+            return letters[random];
+        }
+
+        function rematch() {
+            const randomLetter = generateRandomLetter();  
+            document.querySelector('.guess').textContent = '';  
+            document.querySelector('.keys').innerText = ''; 
+            document.querySelector('.rematch').style.display = 'none';
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Page</title>
+  <style>
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .text-window {
+      display: none;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Form</h2>
+  <div id="form-section">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" id="age" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+    </div>
+    <button onclick="showWindow()">Submit</button>
+  </div>
+
+  <div id="text-window" class="text-window">
+    <h2>Confirmation</h2>
+    <p id="confirmation-text"></p>
+    <button class="confirm-button" onclick="confirm()">Confirm</button>
+    <button class="change-button" onclick="changeInfo()">Change Information</button>
+  </div>
+</div>
+
+<script>
+  function showWindow() {
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('age').value;
+    const email = document.getElementById('email').value;
+    const confirmationText = `Name: ${name}\nAge: ${age}\nEmail: ${email}`;
+
+    document.getElementById('confirmation-text').innerText = confirmationText;
+    document.getElementById('text-window').style.display = 'block';
+    document.getElementById('form-section').style.display = 'none';
+  }
+
+  function confirm() {
+    alert('Congratulations! You have successfully sent this form.');
+  }
+
+  function changeInfo() {
+    document.getElementById('form-section').style.display = 'block';
+    document.getElementById('text-window').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

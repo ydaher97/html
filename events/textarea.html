@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .container {
+            text-align: center;
+            }
+            /* #btn{
+                display: block;
+            } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>why are you intrested in this position</h3>
+        <textarea name="" id="texta" cols="40" rows="10" oninput="submit()"></textarea>
+        <button type="submit" id="btn"  disabled>Click here!</button>
+    </div>
+
+
+    <script>
+        function submit(){
+            const textArea = document.getElementById('texta');
+            const submitButton = document.getElementById('btn');
+
+            if (textArea.value.length >= 10) {
+                submitButton.removeAttribute('disabled');
+            } else {
+                submitButton.setAttribute('disabled', 'true');
+
+            }
+        }
+    </script>
+</body>
+</html>
