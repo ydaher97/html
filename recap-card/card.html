@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        .movie-list {
+            list-style: none;
+            padding: 0;
+           
+        }
+
+        .movie-list-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 20px;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+       
+        .movie-list-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+      </style>
+</head>
+<body>
+   
+
+      <h2>Add a New Movie</h2>
+      <form id="movie-form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+    
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" required><br><br>
+    
+        <label for="director">Director:</label>
+        <input type="text" id="director" name="director" required><br><br>
+    
+        <label for="releaseYear">Release Year:</label>
+        <input type="number" id="releaseYear" name="releaseYear" required><br><br>
+    
+        <label for="rating">Rating:</label>
+        <input type="number" step="0.1" id="rating" name="rating" required><br><br>
+    
+        <label for="votes">Votes:</label>
+        <input type="number" id="votes" name="votes" required><br><br>
+    
+        <label for="img">Image URL:</label>
+        <input type="url" id="img" name="img" required><br><br>
+    
+        <button type="submit">Add Movie</button>
+      </form>
+
+      <h2>Movie List</h2>
+  <ul class="movie-list" id="movie-list">
+    
+  </ul>
+      <script src="./movie.js"></script>
+</body>
+</html>
