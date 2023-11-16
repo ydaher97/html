@@ -1,0 +1,19 @@
+function testNumber(value) {
+  return new Promise((resolve, reject) => {
+    if (value > 10) {
+      resolve(`${value} is greater than 10.`);
+    } else {
+      reject(`${value} is less than or equal to 10.`);
+    }
+  });
+}
+
+const inputNumber = 8; 
+
+testNumber(inputNumber)
+  .then((result) => {
+    console.log('Resolved:', result);
+  })
+  .catch((error) => {
+    console.log('Rejected:', error);
+  });

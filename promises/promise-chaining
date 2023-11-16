@@ -1,0 +1,49 @@
+function makeAllCaps(words) {
+  return new Promise((resolve, reject) => {
+    if (Array.isArray(words)) {
+      const capitalizedWords = words.map((word) => {
+        if (typeof word === 'string') {
+          return word.toUpperCase();
+        } else {
+          reject('Array contains non-string elements.');
+        }
+      });
+      resolve(capitalizedWords);
+    } else {
+      reject('Input is not an array.');
+    }
+  });
+}
+
+function sortWords(capitalizedWords) {
+  return new Promise((resolve, reject) => {
+    if (Array.isArray(capitalizedWords)) {
+      const sortedWords = capitalizedWords.sort();
+      resolve(sortedWords);
+    } else {
+      reject('Input is not an array.');
+    }
+  });
+}
+
+const wordsArray = ['apple', 'orange', 'banana', 'grape'];
+
+makeAllCaps(wordsArray)
+  .then((capitalizedWords) => sortWords(capitalizedWords))
+  .then((sortedWords) => {
+    console.log('Resolved:', sortedWords);
+  })
+  .catch((error) => {
+    console.log('Rejected:', error);
+  });
+
+const mixedArray = ['apple', 'orange', 42, 'grape'];
+
+makeAllCaps(mixedArray)
+  .then((capitalizedWords) => sortWords(capitalizedWords))
+  .then((sortedWords) => {
+    console.log('Resolved:', sortedWords);
+  })
+  .catch((error) => {
+    console.log('Rejected:', error);
+  });
